@@ -6,7 +6,6 @@ select
     State as facility_state,
     `Zip Code` as facility_zip_code,
     `Telephone Number` as facility_phone_number,
-    -- Care & cleanliness
     `Patients who reported that staff definitely gave care in a professional way and the facility was clean` as care_clean_definitely,
     `Patients who reported that staff somewhat gave care in a professional way or the facility was somewhat clean` as care_clean_somewhat,
     `Patients who reported that staff did not give care in a professional way or the facility was not clean` as care_clean_not,
