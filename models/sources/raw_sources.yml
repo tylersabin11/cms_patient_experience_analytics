@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: my_datasets
+    database: opportune-chess-463416-e7 
+    tables:
+      - name: raw_oas_cahps
+        description: >
+          OAS CAHPS data collected from CMS
