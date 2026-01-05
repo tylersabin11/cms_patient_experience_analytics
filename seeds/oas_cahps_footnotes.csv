@@ -1,0 +1,7 @@
+footnote_code,footnote_description,is_suppressed
+0,No footnote,false
+1,The number of cases/patients is too few to report.,true
+3,Results are based on a shorter time period than required.,true
+6,Fewer than 100 patients completed the CAHPS survey. Use these scores with caution as the number of surveys may be too low to reliably assess facility performance.,true
+10,Very few patients were eligible for the CAHPS survey. The scores shown reflect fewer than 50 completed surveys. Use these scores with caution as the number of surveys may be too low to reliably assess facility performance.,true
+11,There were discrepancies in the data collection process.,true

@@ -23,15 +23,9 @@ select
     `Patients who reported PROBABLY YES they would recommend the facility to family or friends` as recommend_probably,
     `Patients who reported NO_ they would not recommend the facility to family or friends` as recommend_no,
     `Patients recommending the facility linear mean score` as recommend_lms,
-    case when `Footnote` = 1 then 'The number of cases/patients is too few to report.'
-        when `Footnote` = 3 then 'Results are based on a shorter time period than required'
-        when `Footnote` = 6 then 'Fewer than 100 patients completed the CAHPS survey. Use these scores with caution, as the number of surveys may be too low to reliably assess facility performance.'
-        when `Footnote` = 10 then 'Very few patients were eligible for the CAHPS survey. The scores shown reflect fewer than 50 completed surveys. Use these scores with caution, as the number of surveys may be too low to reliably assess facility performance.'
-        when `Footnote` = 11 then 'There were discrepancies in the data collection process'
-        else concat('Unknown Footnote Code: ', cast(`Footnote` as string)) end as survey_footnote,
+    cast(`Footnote` as int64) as footnote_code,
     `Number of Sampled Patients` as num_sampled_patients,
     `Number of Completed Surveys` as num_completed_surveys,
-    round(safe_divide(`Number of Completed Surveys`, `Number of Sampled Patients`), 4) as survey_completion_rate,
     `Start Date` as survey_start_date,
     `End Date` as survey_stop_date
 from {{ source('my_datasets', 'raw_oas_cahps')}}

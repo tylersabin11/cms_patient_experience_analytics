@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_oas_cahps_survey
+    columns:
+      - name: facility_id
+        tests:
+          - not_null 
+          - unique
+      - name: facility_name
+        tests:
+          - not_null
