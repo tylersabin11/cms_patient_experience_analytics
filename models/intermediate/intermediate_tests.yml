@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: int_facility_metrics
+    columns:
+      - name: facility_state
+        tests:
+          - not_null 
+          - unique
