@@ -1,4 +1,6 @@
 select
+    
+    -- Facility information & identifiers
     `Facility ID` as facility_id,
     `Facility Name` as facility_name,
     Address as facility_address,
@@ -6,22 +8,31 @@ select
     State as facility_state,
     `Zip Code` as facility_zip_code,
     `Telephone Number` as facility_phone_number,
+
+    -- Cleanliness & quality of care
     `Patients who reported that staff definitely gave care in a professional way and the facility was clean` as care_clean_definitely,
     `Patients who reported that staff somewhat gave care in a professional way or the facility was somewhat clean` as care_clean_somewhat,
     `Patients who reported that staff did not give care in a professional way or the facility was not clean` as care_clean_not,
     `Facilities and staff linear mean score` as care_clean_lms,
+
+    -- Communication received by physicians
     `Patients who reported that staff definitely communicated about what to expect during and after the procedure` as comm_definitely,
     `Patients who reported that staff somewhat communicated about what to expect during and after the procedure` as comm_somewhat,
     `Patients who reported that staff did not communicate about what to expect during and after the procedure` as comm_not,
     `Communication about your procedure linear mean score` as comm_lms,
+
+    -- Patients ratings of the facility
     `Patients who gave the facility a rating of 9 or 10 on a scale from 0 _lowest_ to 10 _highest_` as rating_9_10,
     `Patients who gave the facility a rating of 7 or 8 on a scale from 0 _lowest_ to 10 _highest_` as rating_7_8,
     `Patients who gave the facility a rating of 0 to 6 on a scale from 0 _lowest_ to 10 _highest_` as rating_0_6,
     `Patients' rating of the facility linear mean score` as rating_lms,
+
+    -- Patients reccomendation of the facility
     `Patients who reported YES they would DEFINITELY recommend the facility to family or friends` as recommend_definitely,
     `Patients who reported PROBABLY YES they would recommend the facility to family or friends` as recommend_probably,
     `Patients who reported NO_ they would not recommend the facility to family or friends` as recommend_no,
     `Patients recommending the facility linear mean score` as recommend_lms,
+
     cast(`Footnote` as int64) as footnote_code,
     `Number of Sampled Patients` as num_sampled_patients,
     `Number of Completed Surveys` as num_completed_surveys,
