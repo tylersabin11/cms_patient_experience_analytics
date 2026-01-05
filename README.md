@@ -1,15 +1,57 @@
-Welcome to your new dbt project!
+# OAS CAHPS Analytics
 
-### Using the starter project
+This project models and analyzes **Outpatient and Ambulatory Surgery CAHPS (OAS CAHPS)** survey data using **dbt** and **BigQuery**, with the goal of producing analytics-ready datasets for reporting and BI tools like Looker.
 
-Try running the following commands:
-- dbt run
-- dbt test
+The focus is on transforming raw CMS-style survey data with complex column naming, suppression rules, and footnote metadata into clean, well-documented models that can be safely used for analysis.
 
+---
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+## Project Goals
+
+- Clean and standardize raw OAS CAHPS survey data
+- Handle CMS footnote logic and suppression rules correctly
+- Create reliable, analytics-ready tables for facility-level reporting
+- Serve as a portfolio example of healthcare-focused analytics engineering work
+
+---
+
+## Tech Stack
+
+- **dbt**
+- **BigQuery**
+- **SQL**
+- **Looker** (planned for visualization)
+
+---
+
+## Data Overview
+
+The raw dataset includes:
+- Facility identifiers and location details
+- Survey response distributions (ratings, communication, cleanliness, recommendations)
+- Linear mean scores
+- Survey sampling and completion counts
+- CMS footnote codes that qualify or suppress results
+
+A key challenge of this data is the presence of:
+- Extremely long column names
+- Inconsistent spacing and formatting
+- Footnote codes that affect reportability
+
+These are addressed in the staging layer.
+
+---
+
+## Project Structure
+
+```text
+models/
+  staging/
+    stg_oas_cahps_survey.sql
+  intermediate/
+  analytics/
+
+macros/
+seeds/
+snapshots/
+tests/
