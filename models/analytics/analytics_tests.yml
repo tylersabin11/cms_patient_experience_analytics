@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: oas_cahps_metrics
+    columns:
+      - name: facility_id
+        tests:
+          - not_null
+          - unique
+      - name: facility_name
+        tests:
+          - not_null
+      - name: footnote_code
+        tests:
+          - accepted_values:
+              values: [3, 6, 10, 11, 36, 310]
+              quote: false
+              where: "footnote_code is not null"
