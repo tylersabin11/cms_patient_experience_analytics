@@ -46,15 +46,15 @@ These are addressed in the staging layer.
 
 ```text
 models/
-  staging/
-    stg_oas_cahps_survey.sql
-    staging_tests.yml
-  intermediate/
-    int_facility_metrics.sql
-    intermediate_tests.yml
   analytics/
     oas_cahps_metrics.sql
     analytics_tests.yml
+  intermediate/
+    int_facility_metrics.sql
+    intermediate_tests.yml
+  staging/
+    stg_oas_cahps_survey.sql
+    staging_tests.yml
 
 macros/
     generate_schema_name.sql
