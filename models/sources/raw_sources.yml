@@ -7,3 +7,6 @@ sources:
       - name: raw_oas_cahps
         description: >
           OAS CAHPS data collected from CMS
+      - name: raw_application_data
+        description: >
+          Dummy data for application dashboard
